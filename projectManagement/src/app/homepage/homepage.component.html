@@ -1,0 +1,39 @@
+<div class="Content">
+  <div class="ProjectDetails">
+   <h2>Project Details</h2>
+  
+   <!-- creating form to store inputs -->
+  <div class="tableContent">
+    <table class="table">
+      <thead>
+        <th>ProjectName</th>
+        <th>Customer Name</th>
+        <th>Location</th>
+        <th>Options</th>
+      </thead>
+      <tbody>
+
+      <!-- using ngFor to get the elements data automatically -->
+      <tr *ngFor= "let data of projectDetails;let i=index">
+        <td>{{data.Project}}</td>
+        <td>{{data.Customer}}</td>
+        <td>{{data.Location}}</td>
+
+      <!-- buttons for update and trash of the projects -->
+        <td class="changeMode">
+          <i id=update class="fa fa-edit" (click)='updateDetails(i,data)'></i>&nbsp;
+          <i id=delete class="fa fa-trash" (click)='delete(i)'></i>
+        </td>
+      </tr>
+     </tbody>
+      </table>
+     <br>      
+  </div>
+  <!-- add new projects -->
+  <div>
+    <i id="button" class="fa fa-plus-circle fa-1x" (click)='addNewProject()'> Add Project</i> 
+  </div>
+
+</div>
+
+</div>

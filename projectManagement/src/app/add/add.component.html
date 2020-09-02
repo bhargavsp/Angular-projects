@@ -1,0 +1,58 @@
+<form #addnew="ngForm" (ngSubmit)="onAdd(addnew)">
+  <div class="innerData">
+    <div class="mainHeading">
+      <h2>Add New Project</h2> 
+    </div>
+
+  <div class="mainContent"> 
+
+    <!-- Adding project name -->
+    <div class="form-group">
+      <div class="addLabel">
+        <label for="ProjectName">Project Name*</label>
+      </div>
+      <div class="addInput">
+        <input id= "ProjectName" type="text" class="form-control"
+         [(ngModel)]="name.Project" name="ProjectName" placeholder="Enter the name" 
+         required minlength="4" #ProjectName1="ngModel" [ngModelOptions]="{updateOn: 'change'}">
+         
+      </div>
+    </div>
+
+  <!-- Adding customer name -->
+    <div class="form-group">
+      <div class="addLabel">
+        <label for="CustomerName">Customer Name*</label>
+      </div>
+      <div class="addInput">
+       <input id="CustomerName" type="text"  class="form-control"
+        [(ngModel)]="name.Customer" name="CustomerName" placeholder="Enter customer name" 
+        required #CustomerName1="ngModel" [ngModelOptions]="{updateOn: 'change'}">
+      </div>
+    </div>
+
+  <!-- adding location -->
+    <div class="form-group">
+      <div class="addLabel">
+        <label for="Location">Location*</label>
+      </div>
+      <div class="addInput">
+        <input id="Location" type="text" class="form-control" 
+        [(ngModel)]="name.Location" name="Location" placeholder="Enter Location" 
+        #Location1="ngModel" [ngModelOptions]="{updateOn: 'change'}">
+      </div>
+    </div>
+
+<!-- adding buttons -->
+    <div class="button">
+      <button id="submit" (click)=adddetails(name) *ngIf='!updateFlag'
+       type="submit">Save</button>
+      <button type="button" id="submit"
+       *ngIf='updateFlag' style="background-color: green" (click)="update()">Update</button>
+      <button class="cancelbutton" id="loginbut" (click)="cancel()">Cancel</button>  
+    </div>
+  </div>
+</div>
+</form>
+
+{{addnew.value | json}}

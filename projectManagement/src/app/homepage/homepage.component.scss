@@ -1,0 +1,41 @@
+.Content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.ProjectDetails{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 650px;
+  max-height: 380px;
+  background: mediumspringgreen;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.tableContent{
+  display: flex;
+  flex-grow: 1;
+  background: white;
+}
+
+.table{
+  border: 1;
+  width: 100%;
+  padding: 10px;
+
+   
+}
+.changeMode{
+  cursor: pointer;
+
+}
+#button{
+ cursor: pointer;
+}
+
